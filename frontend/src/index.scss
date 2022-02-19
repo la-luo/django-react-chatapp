@@ -1,0 +1,14 @@
+@import url(https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css);
+//session form
+@import url(https://fonts.googleapis.com/css?family=Roboto:400,700);
+//navbar
+@import url(https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css);
+@import url(https://fonts.googleapis.com/icon?family=Material+Icons);
+@import url(https://fonts.googleapis.com/css?family=Varela+Round);
+
+//Global reset
+* { margin:0; padding:0; box-sizing:border-box; text-decoration: none; }
+
+@import './App.scss';
+
+@import './chatroom.scss';
