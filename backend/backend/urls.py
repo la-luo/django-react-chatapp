@@ -21,6 +21,7 @@ from chat import views
 router = routers.DefaultRouter()
 
 router.register(r'messages', views.MessageView, 'messages') 
+router.register(r'users', views.UserView, 'users')
 
 urlpatterns = [
     path('admin/', admin.site.urls),

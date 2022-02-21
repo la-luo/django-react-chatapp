@@ -1,4 +1,4 @@
-import React, { useState, useEffect }  from 'react';
+import React from 'react';
 import { withRouter, Link} from 'react-router-dom';
 
 
@@ -46,10 +46,10 @@ class LoginForm extends React.Component {
             });
     };
 
-    update(field) {
+    update(field){
         return e => this.setState({
             [field]: e.currentTarget.value
-        }) 
+        })
     }
 
     guestLogin(e){

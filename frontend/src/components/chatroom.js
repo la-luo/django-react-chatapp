@@ -9,6 +9,7 @@ class Chatroom extends React.Component {
 
         this.state = {
             messages: [],
+            users: [],
             user: {},
             text: ""
         };
@@ -37,6 +38,20 @@ class Chatroom extends React.Component {
                   this.setState({
                     user: data
                   });
+                });
+
+            fetch('http://127.0.0.1:8000/api/users/', {
+                    method: 'GET',
+                    headers: {
+                        'Authorization': `Token ${localStorage.getItem('token')}`,
+                    }
+                })
+                .then(res => res.json())
+                .then(data => {
+                    console.log(data)
+                    this.setState({
+                        users: data
+                    })
                 });
 
             fetch('http://127.0.0.1:8000/api/messages/', {
@@ -158,7 +173,19 @@ class Chatroom extends React.Component {
                 </div>
             </nav>
             <div className="row">
-                <div className="col-md-4 col-md-offset-4">
+                <div className="col-md-1 col-md-offset-1">
+                    <h4>Users</h4>
+                    <ul>
+                        { this.state.users.map((user, idx) => {
+                            return (
+                                <li key={idx}>
+                                    {user.username}
+                                </li>
+                            )
+                        })}
+                    </ul>
+                </div>
+                <div className="col-md-5 col-md-offset-2">
                     <div className="portlet portlet-default">
                         <div className="portlet-heading">
                             <div className="portlet-title">
